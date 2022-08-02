@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav > a.active {
+    @apply font-bold
+}
+
+body {
+    font-family: 'DM Sans', Helvetica, sans-serif;
+}
