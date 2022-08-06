@@ -10,30 +10,82 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/main.css">
 </head>
-<body>
-  <header class="bg-secondary">
-    <div class="container flex flex-row justify-between pt-16">
-        <img src="assets/images/logo.png" class="h-12" alt="Wumbo Logo">
-        <nav class="flex justify-center">
-          <a href="#" class="active hover:font-bold mr-12">Top</a>
-          <a href="#" class="hover:font-bold mr-12">For Everyone</a>
-          <a href="#" class="hover:font-bold mr-12">Features</a>
-          <a href="#" class="hover:font-bold mr-12">Preview</a>
-          <a href="#" class="hover:font-bold">License</a>
-        </nav>
-        <a href="javascript:;" class="bg-white font-bold hover:bg-slate-50 px-6 py-3 rounded-md text-primary">Download</a>
-    </div>
+<body id="body" class="no-transition">
+  <section class="px-4 bg-secondary min-h-screen">
     <img src="assets/icons/rectangle-hero.svg" alt="" class="absolute right-0">
-  </header>
-  <main class="bg-secondary min-h-[calc(100vh-112px)]">
-    <div class="container flex items-center">
-      <h1 class="leading-tight mt-32 text-6xl text-dark">
-        Beautiful Design <br> For <strong><u>Social Media</u></strong> <br> Content
-      </h1>
-    </div>
-  </main>
+    <section class="container relative pb-16">
+      <header class="bg-transparent">
+        <nav class="pt-16 mb-16">
+          <div class="flex lg:flex-row flex-col lg:justify-between lg:items-center">
+              <div class="flex flex-row justify-between">
+                  <h1>
+                      <img src="assets/images/logo.png" alt="Logo">
+                  </h1>
+                  <a href="javascript:;" id="hamburger-btn" class="text-5xl lg:hidden">
+                      ≡
+                  </a>
+              </div>
+              <div id="nav-link" class="hidden flex-col gap-4 bg-white p-6 rounded-md lg:flex lg:rounded-none lg:p-0 lg:bg-opacity-0 lg:mb-0 lg:flex-row lg:justify-between lg:items-center lg:gap-12 mt-3">
+                  <a href="javascript:;" class="font-bold hover:font-bold">
+                      Top
+                  </a>
+                  <a href="javascript:;" class="hover:font-bold">
+                      For Everyone
+                  </a>
+                  <a href="javascript:;" class="hover:font-bold">
+                      Features
+                  </a>
+                  <a href="javascript:;" class="hover:font-bold">
+                      Preview
+                  </a>
+                  <a href="javascript:;" class="hover:font-bold">
+                      License
+                  </a>
+              </div>
+              <div id="download-nav-btn" class="hidden bg-white lg:bg-transparent lg:relative lg:top-3 pb-7 px-6 lg:block">
+                  <a href="javascript:;" class="bg-primary lg:bg-white hover:bg-primary-light px-6 py-3 text-white duration-1000 lg:text-primary font-bold rounded-md">Download</a>
+              </div>
+          </div>
+      </nav>
+      </header>
+    </section>
+    <section class="min-h-[calc(100vh-112px)] relative">
+      <div class="container flex flex-row justify-center items-center">
+        <div>
+          <h1 class="leading-tight mb-5 text-6xl text-dark">
+            Beautiful Design <br> For <strong><u>Social Media</u></strong> <br> Content
+          </h1>
+          <p class="leading-9 mb-10 text-muted text-2xl">
+            Figma social media content templates for branding, marketing, insights, and more. Free for personal and commercial use!
+          </p>
+          <div class="min-h-min flex flex-col lg:flex-row">
+            <a href="javascript:;" class="bg-primary font-bold mb-4 lg:mb-0 mr-0 lg:mr-4 rounded-md px-7 py-5 text-white"><img src="assets/icons/download.svg" class="inline mr-4" alt=""> Download Now</a>
+            <a href="javascript:;" class="bg-primary-light rounded-md px-7 py-5 text-primary font-bold"><img src="assets/icons/play-circle.svg" class="inline mr-4" alt=""> See in Action</a>
+          </div>
+        </div>
+        <img src="assets/images/hero-image.png" class="hidden lg:block" alt="">
+      </div>
+    </section>
+  </section>
+  
   <footer>
 
   </footer>
+
+  <script>
+    (function() {
+      document.getElementById('hamburger-btn').addEventListener('click', function() {
+        var navLink = document.getElementById('nav-link');
+        var downloadNavBtn = document.getElementById('download-nav-btn');
+
+        navLink.classList.toggle('hidden');
+        navLink.classList.toggle('flex');
+        downloadNavBtn.classList.toggle('hidden');
+        downloadNavBtn.classList.toggle('block');
+      });
+
+      document.getElementById("body").classList.remove("no-transition");
+    })()
+  </script>
 </body>
 </html>
